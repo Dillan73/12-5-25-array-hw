@@ -1,28 +1,40 @@
 import java.sql.SQLOutput;
+import java.util.Random;
 
 public class Library {
 
     public String owner = "Mx. Bradford";
     public Book[] allBooks;
     public static void main(String[] args) {
-        //TODO: Make an instance of the main class
+        Library myObject = new Library();
     }
 
     public Library(){
 
         System.out.println("Welcome to "+ owner + "'s library!!!!!");
-        //TODO: Give the array allBooks a size of 10
+        allBooks = new Book[10];
 
-        //TODO: Fill the array allBooks with reviews with random ratings from 0 to 10 inclusive
+        for(int i = 0; i < 10; i++){
+            Random rand = new Random();
+            Book curr = new Book(rand.nextInt(11));
+            allBooks[i]=curr;
+        }
 
-        //TODO: print all the ratings in the array allBooks
+        for(int i = 0; i < 10; i++){
+            int spot = i+1;
+            System.out.println("The " + spot + "-th rating is: " + allBooks[i].rating);
+        }
         
-        //TODO: Call the method averageRating
+        averageRating();
 
     }
 
     public void averageRating(){
-        //TODO: calculate the average rating from the array allBooks and print it
-
+        int sum = 0;
+        for(int i = 0; i < 10; i++){
+            sum+=allBooks[i].rating;
+        }
+        double avg = sum/10.0;
+        System.out.println("The average rating is: " + avg);
     }
 }
