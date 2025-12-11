@@ -22,7 +22,7 @@ public class Library {
 
         for(int i = 0; i < 10; i++){
             int spot = i+1;
-            System.out.println("The " + spot + "-th rating is: " + allBooks[i].rating);
+            System.out.println("The " + spot + "-th rating is: " + allBooks[i].getRating());
         }
         
         averageRating();
@@ -32,7 +32,7 @@ public class Library {
     public void averageRating(){
         int sum = 0;
         for(int i = 0; i < 10; i++){
-            sum+=allBooks[i].rating;
+            sum+=allBooks[i].getRating();
         }
         double avg = sum/10.0;
         System.out.println("The average rating is: " + avg);

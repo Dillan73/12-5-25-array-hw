@@ -2,13 +2,13 @@ import java.sql.SQLOutput;
 
 public class Book {
     
-    public int rating;
-    public String title;
-    public String author;
+    private int rating;
+    private String title;
+    private String author;
     
     public Book(int pRating){
-        title = "Grandmaster of Demonic Cultivation";
-        author = "MO Xiang Tong Xiu";
+        title = "Peter Nimble";
+        author = "Johnathon Auxier";
         rating = pRating;
 
     }
@@ -21,5 +21,27 @@ public class Book {
 
     }
 
-    
+    public int getRating(){
+        return rating;
+    }
+
+    public String getTitle(){
+        return title;
+    }
+
+    public String getAuthor(){
+        return author;
+    }
+
+    public void setRating(int r){
+        rating = r;
+    }
+
+    public void setTitle(String t){
+        title = t;
+    }
+
+    public void setAuthor(String a){
+        author = a;
+    }
 }
